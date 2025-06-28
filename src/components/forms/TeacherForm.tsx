@@ -1,4 +1,6 @@
 "use client";
+//  using map((i)=>{ Requires return }) onTheOtherHand map((i)=>( No need of return ))
+        // {img && <img src={img.secure_url} alt="" height={25} width={25} />}
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -163,7 +165,6 @@ const TeacherForm = ({
                 {subject.name}
               </option>
             ))}
-            {/* using map((i)=>{ Requires return }) onTheOtherHand map((i)=>( No need of return )) */}
           </select>
           {errors.subjects?.message && (
             <p className="text-xs text-red-400">
@@ -209,7 +210,6 @@ const TeacherForm = ({
           }}
         </CldUploadWidget>
 
-        // {img && <img src={img.secure_url} alt="" height={25} width={25} />}
       </div>
       {state.error && (
         <span className="text-red-500">Something went wrong!</span>

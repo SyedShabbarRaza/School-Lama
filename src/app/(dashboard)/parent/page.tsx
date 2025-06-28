@@ -20,8 +20,8 @@ const TeacherPage = async() => {
       <div className="">
         {
           students.map((student)=>(
-            <div className="w-full lg:w-2/3">
-        <div className="h-[550] bg-white p-4 rounded-md">
+            <div key={student.id} className="w-full lg:w-2/3">
+        <div className="h-[550px] bg-white p-4 rounded-md">
           <h1 className="text-xl font-semibold">Schedule {student.name+ " " + student.surname}</h1>
           <BigCalendarContainer id={student.classId} type="classId"/>
         </div>
