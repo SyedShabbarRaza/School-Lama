@@ -98,7 +98,7 @@ const FinanceChart = () => {
           <XAxis
             dataKey="name"
             axisLine={false}
-            tick={{ fill: "bg-black-300" }}
+            tick={{ fill: "#d1d5db" }} // light gray
             tickLine={false}
             tickMargin={10}
           />

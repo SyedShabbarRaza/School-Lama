@@ -23,12 +23,12 @@ const AdminPage=async({searchParams}:{searchParams:{[key:string]:string |undefin
       {/* Middle Charts */}
       <div className="flex flex-col gap-4 lg:flex-row">
       {/* CountChart */}
-      <div className="w-full lg:w-1/3 h-[450]">
+      <div className="w-full lg:w-1/3 h-[450px]">
     <CountChartContainer/>
       </div>
       
       {/* Attendance Chart */}
-      <div className="w-full lg:w-2/3 h-[450]">
+      <div className="w-full lg:w-2/3 h-[450px]">
       <AttendanceChartContainer/>
       </div>
 

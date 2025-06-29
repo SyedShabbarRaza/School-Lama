@@ -1,16 +1,23 @@
 import prisma from "@/lib/prisma";
 
 const EventList = async ({ dateParam }: { dateParam: string | undefined }) => {
-  const date = dateParam ? new Date(dateParam) : new Date();
 
-  const data = await prisma.event.findMany({
-    where: {
-      startTime: {
-        gte: new Date(date.setHours(0, 0, 0, 0)),
-        lte: new Date(date.setHours(23, 59, 59, 999)),
-      },
+  const day = dateParam ? new Date(dateParam) : new Date();
+
+const startOfDay = new Date(day);
+startOfDay.setHours(0, 0, 0, 0);
+
+const endOfDay = new Date(day);
+endOfDay.setHours(23, 59, 59, 999);
+
+const data = await prisma.event.findMany({
+  where: {
+    startTime: {
+      gte: startOfDay,
+      lte: endOfDay,
     },
-  });
+  },
+});
 
   return data.map((event) => (
     <div
